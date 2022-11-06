@@ -24,15 +24,16 @@ variable "STATUS" {
 
 ### Deployment Specific Variables ==========================
 
-#AWS Region
+//AWS Region
 variable "AWS_REGION" {
   type = string
   default = "us-east-1"
 }
 
-#AWS Profile
+//AWS Profile
 variable "AWS_PROFILE" {
   type = string
+  default = "default"
 }
 
 //Availability Zone of the public subnet
@@ -79,8 +80,8 @@ variable "APPRUNNER_CODE_PORT" {
 }
 
 //The runtime needed to run the application
-//Accepted values: PYTHON_3, NODEJS_12, NODEJS_14, NODEJS_16, C
-//ORRETTO_8, CORRETTO_11, GO_1, DOTNET_6, PHP_81, RUBY_31
+//Accepted values: PYTHON_3, NODEJS_12, NODEJS_14, NODEJS_16,
+//CORRETTO_8, CORRETTO_11, GO_1, DOTNET_6, PHP_81, RUBY_31
 variable "APPRUNNER_CODE_RUNTIME" {
   type = string
   default = "NODEJS_14"
