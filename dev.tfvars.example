@@ -1,0 +1,22 @@
+## Cloud Resource tagging variables
+
+PROJ="<YOUR_PROJECT_NAME>"
+CONTACT="<YOUR_NAME>""
+STATUS="Active"
+
+### Deployment Specific Variables ==========================
+AWS_REGION = "us-east-1"
+AWS_PROFILE = "default"
+
+
+### App Runner Vars ==========================
+APPRUNNER_CONNECTION_NAME = "epiphyte-github-connection"
+APPRUNNER_SERVICE_NAME = "epiphyte-app-runner-blueprint"
+
+### App Runner Deployment Vars ==========================
+APPRUNNER_CODE_REPO = "https://github.com/epiphyte/example-app"
+APPRUNNER_CODE_BRANCH_NAME = "main"
+APPRUNNER_CODE_BUILD_COMMAND = "npm install && npm run build"
+APPRUNNER_CODE_START_COMMAND = "npm start"
+APPRUNNER_CODE_PORT = "3000"
+APPRUNNER_CODE_RUNTIME = "NODEJS_14"
