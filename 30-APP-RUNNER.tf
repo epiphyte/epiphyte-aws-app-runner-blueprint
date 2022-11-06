@@ -19,13 +19,15 @@ resource "aws_apprunner_connection" "connection" {
   }
 }
 
+//This block connects the App Runner Service to the defined VPC and subnet
 resource "aws_apprunner_vpc_connector" "connector" {
   vpc_connector_name = var.APPRUNNER_SERVICE_NAME
   subnets            = [aws_subnet.public_subnet.id]
   security_groups    = [aws_security_group.SG.id]
 }
 
-
+//App Runner Service is the block that creates the service
+//The actual container configuration
 resource "aws_apprunner_service" "service" {
   depends_on = [aws_apprunner_connection.connection, aws_apprunner_vpc_connector.connector]
   service_name = var.APPRUNNER_SERVICE_NAME
@@ -41,6 +43,7 @@ resource "aws_apprunner_service" "service" {
           port          = var.APPRUNNER_CODE_PORT
           runtime       = var.APPRUNNER_CODE_RUNTIME
           start_command = var.APPRUNNER_CODE_START_COMMAND
+          runtime_environment_variables = var.APPRUNNER_CODE_RUNTIME_ENVIRONMENT_VARIABLES
         }
         configuration_source = "API"
       }

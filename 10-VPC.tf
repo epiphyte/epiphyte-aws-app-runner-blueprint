@@ -28,6 +28,7 @@ resource "aws_vpc" "VPC" {
 resource "aws_subnet" "public_subnet" {
   vpc_id            = aws_vpc.VPC.id
   cidr_block        = "10.30.100.0/24"
+  availability_zone = var.PUBLIC_SUBNET_AVAILABILITY_ZONE
   map_public_ip_on_launch = true
 
   tags = {

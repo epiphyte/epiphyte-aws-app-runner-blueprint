@@ -35,6 +35,11 @@ variable "AWS_PROFILE" {
   type = string
 }
 
+//Availability Zone of the public subnet
+variable "PUBLIC_SUBNET_AVAILABILITY_ZONE" {
+  type = string
+  default = "us-east-1a"
+}
 
 
 ### App Runner Deployment Vars ==========================

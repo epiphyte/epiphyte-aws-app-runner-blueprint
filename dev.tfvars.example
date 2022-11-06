@@ -7,7 +7,7 @@ STATUS="Active"
 ### Deployment Specific Variables ==========================
 AWS_REGION = "us-east-1"
 AWS_PROFILE = "default"
-
+PUBLIC_SUBNET_AVAILABILITY_ZONE = "us-east-1a"
 
 ### App Runner Vars ==========================
 APPRUNNER_CONNECTION_NAME = "epiphyte-github-connection"
@@ -20,3 +20,7 @@ APPRUNNER_CODE_BUILD_COMMAND = "npm install && npm run build"
 APPRUNNER_CODE_START_COMMAND = "npm start"
 APPRUNNER_CODE_PORT = "3000"
 APPRUNNER_CODE_RUNTIME = "NODEJS_14"
+APPRUNNER_CODE_RUNTIME_ENVIRONMENT_VARIABLES = {
+  "REACT_APP_NODE_ENV" = "production"
+  "REACT_APP_NAME" = "Epiphyte-App-Runner-Blueprint"
+}

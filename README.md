@@ -28,3 +28,5 @@ Error: error waiting for App Runner Service  creation: unexpected state 'CREATE_
 **Solution:** This problem is due to an uncompleted handshake between AWS and Github. Go to the AWS App Runner console and click on Github Connections. 
 The connection you created for this application will be there showing status ```Pending Handshake```. Select that connection and click the ```Complete Handshake``` button. After that you can try to redeploy the application again.
 
+## Variables
+
