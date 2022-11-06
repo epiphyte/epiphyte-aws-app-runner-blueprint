@@ -1,0 +1,6 @@
+.idea
+dev.tfvars
+prod.tfvars
+.terraform
+.terraform*
+terraform*
